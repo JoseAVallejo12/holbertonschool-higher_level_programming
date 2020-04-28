@@ -2,15 +2,16 @@
 import random
 number = random.randint(-10000, 10000)
 
-n = abs(number % 10)
+n = abs(number) % 10
 less = "and is less than 6 and not 0"
 greater = "and is grater than 5"
 
 if number < 0:
     n = n * -1
+print("Last digit of", end=" ")
 if n > 5:
-    print("Last digit of {:d} is {:d} {:s}".format(number, n, greater))
+    print("{:d} is {:d} and is grater than 5".format(number, n))
 elif n == 0:
     print("Last digit of {:d} is {:d} and is 0".format(number, n))
-elif n < 6:
-    print("Last digit of {:d} is {:d} {:s}".format(number, n, less))
+else:
+    print("{:d} is {:d} and is less than 6 and not 0".format(number, n))
