@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 
-n = int(repr(number)[-1])
+n = abs(number % 10)
 less = "and is less than 6 and not 0"
 greater = "and is grater than 5"
 
