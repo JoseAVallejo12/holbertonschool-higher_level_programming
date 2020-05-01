@@ -7,7 +7,7 @@ if __name__ == "__main__":
     op = {'+', '-', '*', '/'}
 
     if argc != 4:
-        print("sage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     if not argv[2] in op:
         print("Unknown operator. Available operators: +, -, * and /")
