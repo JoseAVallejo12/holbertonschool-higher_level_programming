@@ -2,3 +2,4 @@
 def no_c(my_string):
     if my_string:
         return (my_string.translate({ord(i): None for i in 'Cc'}))
+    return None
