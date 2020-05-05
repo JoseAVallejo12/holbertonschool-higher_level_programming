@@ -11,5 +11,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
         for i in range(len(list_t_b), 2):
             list_t_b.append(0)
 
-    new_tuple = [list_t_a[0] + list_t_b[0], list_t_a[1] + list_t_b[1]]
-    return (tuple(new_tuple))
+    sum1 = list_t_a[0] + list_t_b[0]
+    sum2 = list_t_a[1] + list_t_b[1]
+    return sum1, sum2
