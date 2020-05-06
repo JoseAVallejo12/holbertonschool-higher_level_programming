@@ -35,8 +35,12 @@ int is_palindrome(listint_t **head)
 	{
 		i--;
 		if (datos[j] != datos[i])
+		{
+			free(datos);
 			return (0);
+		}
 
 	}
+	free(datos);
 	return (1);
 }
