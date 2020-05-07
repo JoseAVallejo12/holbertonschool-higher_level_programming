@@ -2,9 +2,12 @@
 def roman_to_int(roman_string):
     if roman_string:
         roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        roman_chars = sorted(roman.keys())
         resul = 0
         ciclos = 0
-        for roman_values in list(roman_string):  
+        for roman_values in list(roman_string):
+            if not roman_values in roman_chars:
+                return 0
             if ciclos > 0 and resul < roman[roman_values]:
                 resul = roman[roman_values] - resul
             else:
