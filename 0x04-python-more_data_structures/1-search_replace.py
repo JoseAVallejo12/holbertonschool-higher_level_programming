@@ -1,4 +1,9 @@
 #!/usr/bin/phython3
 def search_replace(my_list, search, replace):
-    new = my_list.copy()
-    return (list(map(lambda x: replace if x == search else x, new)))
+    new_list = []
+    for n in my_list:
+        if n == search:
+            new_list.append(replace)
+        else:
+            new_list.append(n)
+    return new_list
