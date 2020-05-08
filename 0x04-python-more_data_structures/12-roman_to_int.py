@@ -12,11 +12,15 @@ def roman_to_int(roman_string):
     }
     resul = 0
     ciclos = 0
+    prev_val = 0
 
-    for roman_key in list(roman_string):
-        if ciclos > 0 and resul < roman[roman_key]:
-            resul = roman[roman_key] - resul
+    for roman_key in roman_string:
+        if ciclos > 0 and prev_val < roman[roman_key]:
+            resul -= prev_val
+            resul = resul + (roman[roman_key] - prev_val)
         else:
             resul = resul + roman[roman_key]
+
         ciclos += 1
+        prev_val = roman[roman_key]
     return resul
