@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+# 1-square.py
+# jose vallejo <1545@holbertonschool.com
+""" validate atributte """
 
 
 class Square(object):
-    """Initialize a new square
+    """ class Square """
 
-    Arguments:
-        size: init: the new value
-    """
     def __init__(self, size=0):
+        """ inicialize size var """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
