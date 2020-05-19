@@ -3,8 +3,10 @@
 # jose vallejo <1545@holbertonschool.com
 """ create a new class """
 
+
 class Square(object):
     """ inicialice new class square """
+
     def __init__(self, size=0):
         """ inicialice size var """
         self.__size = size
