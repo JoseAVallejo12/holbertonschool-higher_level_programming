@@ -17,11 +17,6 @@ class Square(object):
         """ getter method for private size """
         return self.__size
 
-    @property
-    def position(self):
-        """ getter method for private position """
-        return self.__position
-
     @size.setter
     def size(self, value):
         """ setter method for private size """
@@ -31,6 +26,11 @@ class Square(object):
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    @property
+    def position(self):
+        """ getter method for private position """
+        return self.__position
 
     @position.setter
     def position(self, x):
