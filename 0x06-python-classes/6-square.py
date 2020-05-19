@@ -49,8 +49,8 @@ class Square(object):
         else:
             x = self.__size
             y = self.__position[0]
-            if self.__position[1] > 0:
-                print()
+            for i in range(self.__position[1]):
+                print("")
             while self.__size != 0:
                 print(y * " ", end="")
                 print(x * "#")
