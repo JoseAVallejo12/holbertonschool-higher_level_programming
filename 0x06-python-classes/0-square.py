@@ -2,9 +2,5 @@
 
 
 class Square(object):
-    """Define empty class
-
-    Arguments:
-        object -- description
-    """
+    """Define empty class"""
     pass
