@@ -1,19 +1,14 @@
 #!/usr/bin/python3
+# 3-square.py
+# jose vallejo <1545@holbertonschool.com
+"""Define a new class: """
 
 
 class Square(object):
-    """[summary]
-
-        Arguments:
-                object {object} -- for good practices
-                __size {int} -- value private
-
-        Raises:
-                TypeError: rise error for type wrong
-                ValueError: rise error for value negativ
-        """
+    """ new class defined """
 
     def __init__(self, size=0):
+        """ inicialice size var """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
@@ -21,4 +16,5 @@ class Square(object):
         self.__size = size
 
     def area(self):
+        """ Method for Calculate area """
         return self.__size * self.__size

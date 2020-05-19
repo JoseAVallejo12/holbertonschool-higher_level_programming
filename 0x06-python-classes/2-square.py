@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 1-square.py
+# 2-square.py
 # jose vallejo <1545@holbertonschool.com
 """ validate atributte """
 
