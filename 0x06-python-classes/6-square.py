@@ -9,8 +9,8 @@ class Square(object):
 
     def __init__(self, size=0, position=(0, 0)):
         """ inicialice size var """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -33,12 +33,9 @@ class Square(object):
         return self.__position
 
     @position.setter
-    def position(self, value):
+    def position(self, x):
         """ setter method for private position """
-        if (not isinstance(value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+        if type(x) is not tuple and type(x[0] and x[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
