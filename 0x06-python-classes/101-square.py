@@ -49,18 +49,17 @@ class Square(object):
 
     def __str__(self):
         """ Method for send square # in stdout """
-        if self.__size == 0:
-            print()
-            return
-        else:
-            x = self.__size
-            y = self.__position[0]
-            for i in range(self.__position[1]):
-                print("")
-            while self.__size != 0:
-                print(y * " ", end="")
-                print(x * "#")
-                self.__size -= 1
+        x = self.__size
+        y = self.__position[0]
+        strg = ""
+        if x == 0:
+            return strg
+        for i in range(self.__position[1]):
+            strg = strg + "\n"
+        while x != 0:
+            strg = strg + (y * " ") + (x * "#") + "\n"
+            x -= 1
+        return strg
 
     def my_print(self):
         """ Method for send square # in stdout """
