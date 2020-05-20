@@ -37,6 +37,7 @@ class Square(object):
         """ setter method for private position """
         if type(x) is not tuple and type(x[0] and x[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = x
 
     def area(self):
         """ Method for Calculate area """
