@@ -16,3 +16,8 @@ if s_5 > s_6:
     print("Square 5 > Square 6")
 if s_5 >= s_6:
     print("Square 5 >= Square 6")
+
+print(s_5.__dict__)
+
+for i in Square.__dict__:
+    print(i)
