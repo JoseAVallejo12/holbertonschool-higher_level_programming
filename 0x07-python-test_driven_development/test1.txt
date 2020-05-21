@@ -1,0 +1,23 @@
+>>> from test import my_function
+>>> my_function(2, 3)
+6
+>>> my_function(0, 1)
+0
+>>> my_function(6, 0)
+0
+>>> my_function(5, "hola")
+Traceback (most recent call last):
+    ...
+ValueError: must be int
+>>> my_function([4,3,5], (3,4,5))
+Traceback (most recent call last):
+    ...
+OverflowError: too large
+>>> my_function([4,3,5], [3,4,5])
+Traceback (most recent call last):
+    ...
+OverflowError: too large
+>>> my_function('s', (3,4,5))
+Traceback (most recent call last):
+    ...
+OverflowError: too large
