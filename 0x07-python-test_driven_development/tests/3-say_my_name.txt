@@ -1,11 +1,20 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 >>> say_my_name("", "")
+
 >>> say_my_name(5, "")
 Traceback (most recent call last):
     ...
-TypeError: irst_name must be a string or last_name must be a string
+TypeError: first_name must be a string
+
+>>> say_my_name("jose", 78)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
 
 >>> say_my_name([4,6], "")
 Traceback (most recent call last):
     ...
-TypeError: irst_name must be a string or last_name must be a string
+TypeError: first_name must be a string
+
+>>> say_my_name("jose", "")
+My name is jose 
