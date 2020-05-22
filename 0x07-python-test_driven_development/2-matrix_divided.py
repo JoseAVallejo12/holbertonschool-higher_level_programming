@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 # jose vallejo <1545@holbertonschool.com>
-""" Create funtions for div matrix """
+"""
+    Create funtions for div matrix
+    @matrix and div must be integer numbers
+    Return: new matrix with result of div 
+"""
 
 
 def matrix_divided(matrix, div):
-    """ funtin for div each elemt of matrix """
+    """
+        funtin for div each elemt of matrix 
+    """
+
     new_mtrx = []
 
     if not isinstance(div, (int, float)):
-        """ div must be a number integer or float """
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
@@ -25,8 +31,7 @@ def matrix_divided(matrix, div):
                     raise TypeError(
                         "matrix must be a matrix (list of lists) of integers/floats")
                 else:
-                    value = float(matrix[i][j] / div)
-                    new_mtrx[i].append(round(value, 2))
+                    new_mtrx[i].append(round((matrix[i][j] / div), 2))
 
             row_prev = len(matrix[i])
         return new_mtrx

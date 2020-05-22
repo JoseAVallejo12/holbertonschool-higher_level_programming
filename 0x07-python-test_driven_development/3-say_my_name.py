@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 # jose vallejo <1545@holbertonschool.com>
-""" create funtion that say mi name """
+"""
+    create funtion that say mi name 
+    @first_name and last_name must be str type
+    Return: only print arg in stdout
+"""
 
 
 def say_my_name(first_name, last_name=""):
-    """ funtion for say name givend in parameters """
+    """
+        funtion for say name givend in parameters
+    """
+
     if first_name:
         if type(first_name) is not str:
             raise TypeError("first_name must be a string")

@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 # jose vallejo <1545@holbertonschool.com>
-""" create funtion for add two number """
+"""
+    funtion for add two number int
+    @a & @b: must be inter or float number
+    Return: add by a and b
+"""
 
 
 def add_integer(a, b=98):
-    """ funtion for add number """
+    """
+        funtion for add number
+    """
+
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     elif not isinstance(b, (int, float)):
