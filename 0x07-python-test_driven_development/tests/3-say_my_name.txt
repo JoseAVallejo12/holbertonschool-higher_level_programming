@@ -1,20 +1,46 @@
->>> say_my_name = __import__('3-say_my_name').say_my_name
->>> say_my_name("", "")
+# 3-say_my_name.txt
+==================================
+ Test case for 3-say_my_name.py
+==================================
 
->>> say_my_name(5, "")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+This library is very simple, since it only has one function called
+``say_my_name()``.
 
->>> say_my_name("jose", 78)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+Import my funtion
+==================
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> say_my_name([4,6], "")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+::
 
->>> say_my_name("jose", "")
-My name is jose
+
+Normal test
+===========
+::
+    >>> say_my_name("", "")
+
+    >>> say_my_name("jose", "")
+    My name is jose
+
+::
+
+
+Handle error Test
+=================
+::
+    >>> say_my_name(5, "")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("jose", 78)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name([4,6], "")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+::

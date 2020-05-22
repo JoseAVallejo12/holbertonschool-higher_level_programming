@@ -1,40 +1,68 @@
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(2, 3)
-5
+# 0-add_integer.txt
+===============================
+ Test case for 0-add_integer.py
+===============================
 
->>> add_integer(4, 6)
-10
+This library is very simple, since it only has one function called
+``add_integer()``.
 
->>> add_integer(3.2, 6)
-9
+Import my funtion
+==================
+::
+    >>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(4, 7.9)
-11
+::
 
->>> add_integer(1)
-99
+Normal test
+===========
+::
 
->>> add_integer("hola", 3)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+    >>> add_integer(2, 3)
+    5
 
->>> add_integer(2, "hol")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
+    >>> add_integer(4, 6)
+    10
 
->>> add_integer((3,4), 4)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+    >>> add_integer(3.2, 6)
+    9
 
->>> add_integer({'s':3,'g':5}, {'s':3,'g':5})
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+    >>> add_integer(4, 7.9)
+    11
 
->>> add_integer([1,2,3], [2,6,8])
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+    >>> add_integer(1)
+    99
+
+::
+
+raise error test
+================
+::
+
+    >>> add_integer(None)
+
+    >>> add_integer("hola", 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, "hol")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer((3,4), 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer({'s':3,'g':5}, {'s':3,'g':5})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer([1,2,3], [2,6,8])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+::

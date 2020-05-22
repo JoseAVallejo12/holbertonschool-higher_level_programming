@@ -1,0 +1,68 @@
+# 5-text_indentation.txt
+====================================
+ Test case for 5-text_indentation.py
+====================================
+
+This library is very simple, since it only has one function called
+``text_indentation()``.
+
+Import my funtion
+==================
+::
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+::
+
+
+Define and Inicialice temp var
+==============================
+::
+    >>> a = "the. thing?: maybe...."
+
+::
+
+
+Normal test
+===========
+::
+    >>> text_indentation(a)
+    the.
+    <BLANKLINE>
+    thing?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    maybe.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation(None)
+    
+
+::
+
+
+Handle error Test
+=================
+::
+    >>> text_indentation(56)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["hola"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(("hola", "Hola"))
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+::
