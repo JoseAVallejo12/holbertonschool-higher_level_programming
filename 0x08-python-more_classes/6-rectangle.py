@@ -18,7 +18,7 @@ class Rectangle(object):
         """ init for height and width """
         self.height = height
         self.width = width
-        Rectangle.number_of_instances = + 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
