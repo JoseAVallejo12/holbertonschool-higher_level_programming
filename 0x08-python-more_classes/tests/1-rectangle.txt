@@ -1,0 +1,53 @@
+# doctest for file task 0
+# Jose A. Vallejo Contreras
+# 1545@holbertonschool.com
+
+import class
+===========
+::
+    >>> Rectangle = __import__('1-rectangle').Rectangle
+
+::
+
+normal test
+===========
+::
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+    >>> my_rectangle = Rectangle(3, 10)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 10, '_Rectangle__width': 3}
+
+
+::
+
+Handle Error
+::
+    >>> my_rectangle = Rectangle("hola", 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: width must be an integer
+
+    >>> my_rectangle = Rectangle(5, "jojo")
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+
+    >>> my_rectangle = Rectangle(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+
+    >>> my_rectangle = Rectangle([2, 3], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: width must be an integer
+
+    >>> my_rectangle = Rectangle((2, 6), 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: width must be an integer
+
+::
