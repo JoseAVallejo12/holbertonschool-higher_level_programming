@@ -69,9 +69,9 @@ class Rectangle(object):
         string = ""
         for i in range(self.__height):
             if i == self.__height - 1:
-                string += self.__width * Rectangle.print_symbol
+                string += self.__width * str(self.print_symbol)
             else:
-                string += self.__width * Rectangle.print_symbol + '\n'
+                string += self.__width * str(self.print_symbol) + '\n'
         return string
 
     def __repr__(self):
