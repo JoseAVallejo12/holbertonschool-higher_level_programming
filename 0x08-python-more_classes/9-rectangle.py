@@ -97,5 +97,5 @@ class Rectangle(object):
 
     @classmethod
     def square(cls, size=0):
-        """Returns a printable string"""
+        """ Returns a printable string """
         return (Rectangle(size, size))
