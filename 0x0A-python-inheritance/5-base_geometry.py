@@ -3,4 +3,5 @@
 
 
 class BaseGeometry(object):
+    """ new class """
     pass
