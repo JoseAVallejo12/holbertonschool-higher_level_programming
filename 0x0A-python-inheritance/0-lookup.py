@@ -5,8 +5,8 @@
 
 
 def lookup(obj):
-    """ 
-        The dir() method tries to return a list 
+    """
+        The dir() method tries to return a list
         of valid attributes of the object.
     """
     return dir(obj)
