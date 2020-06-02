@@ -13,42 +13,48 @@ import class
 normal test
 ===========
 ::
-    >>> my_rectangle = Rectangle(2, 4)
-    >>> print(my_rectangle.__dict__)
-    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> del my_list
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.append(-3)
+    >>> my_list.append(-5)
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+    >>> my_list.append(3)
+    >>> my_list.append(0)
+    >>> my_list.append(-6)
+    >>> my_list.print_sorted()
+    [-6, -5, -4, -3, -2, -1, 0, 3]
+    >>> del my_list
+    >>> my_list = MyList()
+    >>> my_list.append(0)
+    >>> my_list.append(0)
+    >>> my_list.append(0)
+    >>> my_list.print_sorted()
+    [0, 0, 0]
+    >>> del my_list
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(0)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [-1, 0, 2]
 
-    >>> my_rectangle = Rectangle(3, 10)
-    >>> print(my_rectangle.__dict__)
-    {'_Rectangle__height': 10, '_Rectangle__width': 3}
-
-
-::
-
-Handle Error
-::
-    >>> my_rectangle = Rectangle("hola", 5)
-    Traceback (most recent call last):
-        ...
-    TypeError: width must be an integer
-
-    >>> my_rectangle = Rectangle(5, "jojo")
-    Traceback (most recent call last):
-        ...
-    TypeError: height must be an integer
-
-    >>> my_rectangle = Rectangle(None, None)
-    Traceback (most recent call last):
-        ...
-    TypeError: height must be an integer
-
-    >>> my_rectangle = Rectangle([2, 3], 3)
-    Traceback (most recent call last):
-        ...
-    TypeError: width must be an integer
-
-    >>> my_rectangle = Rectangle((2, 6), 3)
-    Traceback (most recent call last):
-        ...
-    TypeError: width must be an integer
 
 ::
