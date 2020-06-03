@@ -12,9 +12,14 @@ class Rectangle(BaseGeometry):
     """ class rectangle inherits of besegeometry """
 
     def __init__(self, width, heigth):
-        """ init method for private attribute """
+        """
+            Intialize a new Rectangle.
+            Args:
+                width (int): The width of the new Rectangle.
+                height (int): The height of the new Rectangle.
+        """
 
         super().integer_validator('width', width)
-        super().integer_validator('height', heigth)
         self.__width = width
+        super().integer_validator('height', heigth)
         self.__heigth = heigth
