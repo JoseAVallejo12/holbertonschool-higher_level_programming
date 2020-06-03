@@ -1,5 +1,6 @@
 <h1>0x0A. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" alt="logo python" width="30" height="30">Python - Inheritance </h1>
 
+![Inheritance img](https://mytoshika.com/blog/wp-content/uploads/2019/06/Types_Of_Inhertiance_In_Java.jpg)
 ## Resources
 ### Read or watch:
 
@@ -57,8 +58,8 @@ Write a function that returns the list of available attributes and methods of an
 
 - Prototype: def lookup(obj):
 - Returns a list object
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./0-main.py
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__']
@@ -71,8 +72,8 @@ Write a class MyList that inherits from list:
 
 - Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
 - You can assume that all the elements of the list will be of type int
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./1-main.py
 [1, 4, 2, 3, 5]
@@ -84,8 +85,8 @@ Output:
 Write a function that returns True if the object is exactly an instance of the specified class ; otherwise False.
 
 - Prototype: def is_same_class(obj, a_class):
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./2-main.py
 1 is an instance of the class int
@@ -95,8 +96,8 @@ Output:
 Write a function that returns True if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class ; otherwise False.
 
 - Prototype: def is_kind_of_class(obj, a_class):
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./3-main.py
 1 comes from int
@@ -107,8 +108,8 @@ Output:
 Write a function that returns True if the object is an instance of a class that inherited (directly or indirectly) from the specified class ; otherwise False.
 
 - Prototype: def inherits_from(obj, a_class):
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./4-main.py
 True inherited from class int
@@ -118,8 +119,8 @@ True inherited from class object
 ## 5. Geometry module mandatory
 Write an empty class BaseGeometry.
 
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./5-main.py
 <5-base_geometry.BaseGeometry object at 0x7fe23fe183d0>
@@ -131,8 +132,8 @@ Output:
 Write a class BaseGeometry (based on 5-base_geometry.py).
 
 - Public instance method: def area(self): that raises an Exception with the message area() is not implemented
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./6-main.py
 [Exception] area() is not implemented
@@ -146,8 +147,8 @@ Write a class BaseGeometry (based on 6-base_geometry.py).
 you can assume name is always a string
     - if value is not an integer: raise a TypeError exception, with the message <name> must be an integer
     - if value is less or equal to 0: raise a ValueError exception with the message <name> must be greater than 0
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./7-main.py
 [TypeError] name must be an integer
@@ -160,8 +161,8 @@ Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
 
 - Instantiation with width and height: def __init__(self, width, height):
     - width and height must be private. No getter or setter
-    - width and height must be positive integers, validated by integer_validator
-Output:
+    - width and height must be positive integers, validated by integer_validator  
+***Output:***
 ```
 ❯ ./8-main.py
 <8-rectangle.Rectangle object at 0x7f47c46c83d0>
@@ -177,8 +178,8 @@ Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py). (t
     - width and height must be private. No getter or setter
     - width and height must be positive integers validated by integer_validator
 - the area() method must be implemented
-- print() should print, and str() should return, the following rectangle description: [Rectangle] <width>/<height>
-Output:
+- print() should print, and str() should return, the following rectangle description: [Rectangle] <width>/<height>  
+***Output:***
 ```
 ❯ ./9-main.py
 [Rectangle] 3/5
@@ -191,8 +192,8 @@ Write a class Square that inherits from Rectangle (9-rectangle.py):
 - Instantiation with size: def __init__(self, size)::
     - size must be private. No getter or setter
     - size must be a positive integer, validated by integer_validator
-- the area() method must be implemented
-Output:
+- the area() method must be implemented  
+***Output:***
 ```
 ❯ ./10-main.py
 [Rectangle] 13/13
@@ -206,8 +207,8 @@ Write a class Square that inherits from Rectangle (9-rectangle.py). (task based 
     - size must be private. No getter or setter
     - size must be a positive integer, validated by integer_validator
 - the area() method must be implemented
-- print() should print, and str() should return, the square description: [Square] <width>/<height>
-Output:
+- print() should print, and str() should return, the square description: [Square] <width>/<height>  
+***Output:***
 ```
 ❯ ./11-main.py
 [Square] 13/13
@@ -223,8 +224,8 @@ Output:
 Write a class MyInt that inherits from int:
 
 - MyInt is a rebel. MyInt has == and != operators inverted
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./100-main.py
 3
@@ -237,8 +238,8 @@ Write a function that adds a new attribute to an object if it’s possible:
 
 - Raise a TypeError exception, with the message can't add new attribute if the object can’t have new attribute
 - You are not allowed to use try/catch
-- You are not allowed to import any module
-Output:
+- You are not allowed to import any module  
+***Output:***
 ```
 ❯ ./101-main.py
 John
