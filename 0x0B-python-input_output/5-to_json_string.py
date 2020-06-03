@@ -2,8 +2,15 @@
 """ create new funtion """
 import json
 
-def to_json_string(my_obj):
 
-    if not isinstance(my_obj, (dict, list, tuple, str, int, float)):
-        raise TypeError(my_obj)
-    return json.dumps(my_obj, sort_keys=True)
+def to_json_string(my_obj):
+    """Convert python to JSON
+
+    Args:
+        my_obj ([dict]): object to convert
+
+    Returns:
+        [str-json]: object convert
+    """
+
+    return json.dumps(my_obj)
