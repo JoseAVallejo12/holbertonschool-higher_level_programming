@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" create a new class """
+"""
+    create a new class
+    inherit from BaseGeometry
+"""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
