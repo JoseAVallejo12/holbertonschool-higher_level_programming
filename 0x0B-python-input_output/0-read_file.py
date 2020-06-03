@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" createa new funtion """
+
 
 def read_file(filename=""):
     """read file funtions
