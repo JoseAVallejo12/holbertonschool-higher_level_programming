@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" 
+"""
 Returns simple data structure type dict
-(list, dictionary, string, integer and boolean) 
+(list, dictionary, string, integer and boolean)
 for JSON serialization of an object:
 """
 
