@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""14-pascal_triangle.py module"""
 
 def pascal_triangle(n):
+    """[summary]
+
+    Args:
+        n ([type]): [description]
+    """
 
     new_list = []
     for i in range(n):
