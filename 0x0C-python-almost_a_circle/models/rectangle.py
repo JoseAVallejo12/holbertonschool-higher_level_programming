@@ -2,9 +2,19 @@
 """ create a new class Rectangle """
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Contructor
+
+        Args:
+            width (int): ancho
+            height (int): alto value
+            x (int, optional): x value. Defaults to 0.
+            y (int, optional): y value. Defaults to 0.
+            id (int, optional): identify for object. Defaults to None.
+        """
         self.width = width
         self.height = height
         self.x = x

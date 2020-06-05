@@ -3,7 +3,7 @@
 
 
 class Base(object):
-    """Base class 
+    """Base class
 
     Args:
         object (int): id for the new object instance
