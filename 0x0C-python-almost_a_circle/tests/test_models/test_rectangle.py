@@ -31,8 +31,6 @@ class TestClassRectangle(unittest.TestCase):
         self.assertTrue(b2.id == 2)
         self.assertEqual(b3.id, "holberton")
 
-class TestOtro(unittest.TestCase):
-
     def test_a002(self):
         """ Checks for task 3. Validate attributes """
 
