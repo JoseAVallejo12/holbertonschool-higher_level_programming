@@ -2,5 +2,13 @@
     "files.autoSave": "afterDelay",
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
-    "editor.autoIndent": "full"
+    "editor.autoIndent": "full",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "consolas",
+    "debug.console.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 12
+
 }
+
+//Consolas, 'Courier New', monospace,  MesloLGS NF

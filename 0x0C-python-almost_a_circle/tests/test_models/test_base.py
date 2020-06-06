@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """ unit test for max_integer function """
-
 import unittest
-# Base = __import__('base.py').Base
 from models.base import Base
 
 
@@ -13,23 +11,16 @@ class TestClassBase(unittest.TestCase):
 
     def test_a001(self):
         """ check empty argument send to function """
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        b4 = Base(None)
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 4)
+        self.assertEqual(Base().id, 1)
+        self.assertEqual(Base().id, 2)
+        self.assertEqual(Base().id, 3)
+        self.assertEqual(Base(None).id, 4)
 
     def test_a002(self):
         """ check with argument send to function"""
-        b5 = Base(13)
-        b6 = Base('s')
-        b7 = Base("holberton")
-        self.assertEqual(b5.id, 13)
-        self.assertEqual(b6.id, 's')
-        self.assertEqual(b7.id, "holberton")
+        self.assertEqual(Base(13).id, 13)
+        self.assertEqual(Base('s').id, 's')
+        self.assertEqual(Base("holberton").id, "holberton")
 
     def test_a003(self):
         """ check send more of one argument to funtion """
@@ -40,5 +31,4 @@ class TestClassBase(unittest.TestCase):
 
     def test_a004(self):
         """ check if value id not is increced after error """
-        b8 = Base()
-        self.assertEqual(b8.id, 5)
+        self.assertEqual(Base().id, 5)
