@@ -88,3 +88,8 @@ class Rectangle(Base):
             int: area cal
         """
         return self.__width * self.__height
+
+    def display(self):
+        """ print rentangle with # char """
+        for i in range(self.__height):
+            print('#' * self.__width)

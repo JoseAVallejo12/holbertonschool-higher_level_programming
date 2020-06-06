@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ unit test for Rectangle.py file """
 import unittest
-
+import io, contextlib
 # Rectangle = __import__('base.py').Rectangle
 from models.rectangle import Rectangle
 from models.base import Base
@@ -186,3 +186,22 @@ class TestTask_Four(unittest.TestCase):
         """ check value resul 4x5 = 20 """
         c = Rectangle(8, 5)
         self.assertEqual(c.area(), 40)
+
+class TestTask_five(unittest.TestCase):
+    """ unit testing class Rectangle task 5. Display #0 """
+
+    def test_ad0_display1(self):
+        """This function tests the display function"""
+        r1 = Rectangle(2, 3, 2, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r1.display()
+        self.assertEqual(f.getvalue(), "##\n##\n##\n")
+
+    def test_ad1_display2(self):
+        """This function tests the display function"""
+        r1 = Rectangle(5, 3, 2, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r1.display()
+        self.assertEqual(f.getvalue(), "#####\n#####\n#####\n")
