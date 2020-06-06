@@ -10,6 +10,7 @@ class Base(object):
     """
 
     __nb_objects = 0
+    cosas = 0
 
     def __init__(self, id=None):
         """Inicialice var object
