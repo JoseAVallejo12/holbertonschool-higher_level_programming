@@ -189,16 +189,16 @@ class TestTask_Four(unittest.TestCase):
         self.assertEqual(c.area(), 40)
 
 
-class TestTask_five(unittest.TestCase):
-    """ unit testing class Rectangle task 5. Display #0 """
+class TestTask_five_and_seven(unittest.TestCase):
+    """ unit testing class Rectangle task 5. Display #0 and 7. Display #1"""
 
     def test_ad0_display1(self):
         """This function tests the display function"""
-        r1 = Rectangle(2, 3, 2, 2)
+        r1 = Rectangle(2, 3, 2, 1)
         f = io.StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
-        self.assertEqual(f.getvalue(), "##\n##\n##\n")
+        self.assertEqual(f.getvalue(), "\n  ##\n  ##\n  ##\n")
 
     def test_ad1_display2(self):
         """This function tests the display function"""
@@ -206,4 +206,143 @@ class TestTask_five(unittest.TestCase):
         f = io.StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
+        self.assertEqual(f.getvalue(), "\n\n  #####\n  #####\n  #####\n")
+
+    def test_ad2_display3(self):
+        """This function tests the display function"""
+        r1 = Rectangle(5, 3)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r1.display()
         self.assertEqual(f.getvalue(), "#####\n#####\n#####\n")
+
+
+class TestTask_six(unittest.TestCase):
+    """ unit testing class Rectangle task 6. __str__  """
+
+    def test_ae0_str(self):
+        """ test 1 """
+
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            print(r1)
+        self.assertEqual(f.getvalue(), "[Rectangle] (12) 2/1 - 4/6\n")
+
+    def test_ae1_str(self):
+        """ test 2 """
+
+        r1 = Rectangle(5, 5, 1)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            print(r1)
+        self.assertEqual(f.getvalue(), "[Rectangle] (9) 1/0 - 5/5\n")
+
+
+class TestTask_eight(unittest.TestCase):
+    """ unit testing class Rectangle task 8. Update #0 """
+
+    def test_af0_update(self):
+        """ test stdout posicionated value (*args) """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r1.update(89)
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 10/10\n")
+
+    def test_af1_update(self):
+        """ test std out and set posicionated value (*args) """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(89, 2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 2/10\n")
+
+    def test_af2_update(self):
+        """ test std out and set posicionated value (*args) """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(56, 22, 33)
+        self.assertEqual(r1.id, 56)
+        self.assertEqual(r1.width, 22)
+        self.assertEqual(r1.height, 33)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(
+                f.getvalue(), "[Rectangle] (56) 10/10 - 22/33\n")
+
+    def test_af3_update(self):
+        """ test std out and set posicionated value (*args) """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(8, 23, 13, 88, 23)
+        self.assertEqual(r1.id, 8)
+        self.assertEqual(r1.width, 23)
+        self.assertEqual(r1.height, 13)
+        self.assertEqual(r1.x, 88)
+        self.assertEqual(r1.y, 23)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (8) 88/23 - 23/13\n")
+
+
+class TestTask_nine(unittest.TestCase):
+
+    def test_ag0_update(self):
+        """ test stdout """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r1.update(id=89)
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 10/10\n")
+
+    def test_ag1_update(self):
+        """ test std out and set nemed value (**kwargs) """
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(width=2, id=89)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 2/10\n")
+
+    def test_ag2_update(self):
+        """ test std out and set named value (**kwargs)"""
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(id=56, height=33, width=22)
+        self.assertEqual(r1.id, 56)
+        self.assertEqual(r1.width, 22)
+        self.assertEqual(r1.height, 33)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(
+                f.getvalue(), "[Rectangle] (56) 10/10 - 22/33\n")
+
+    def test_ag3_update(self):
+        """ test std out and set named value (**kwargs)"""
+
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        f = io.StringIO()
+        r1.update(id=8, x=88, width=23, y=23, height=13)
+        self.assertEqual(r1.id, 8)
+        self.assertEqual(r1.width, 23)
+        self.assertEqual(r1.height, 13)
+        self.assertEqual(r1.x, 88)
+        self.assertEqual(r1.y, 23)
+        with contextlib.redirect_stdout(f):
+            print(r1)
+            self.assertEqual(f.getvalue(), "[Rectangle] (8) 88/23 - 23/13\n")
