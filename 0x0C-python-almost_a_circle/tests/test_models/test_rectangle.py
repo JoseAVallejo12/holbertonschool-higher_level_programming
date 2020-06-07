@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ unit test for Rectangle.py file """
 import unittest
-import io, contextlib
+import io
+import contextlib
 # Rectangle = __import__('base.py').Rectangle
 from models.rectangle import Rectangle
 from models.base import Base
@@ -186,6 +187,7 @@ class TestTask_Four(unittest.TestCase):
         """ check value resul 4x5 = 20 """
         c = Rectangle(8, 5)
         self.assertEqual(c.area(), 40)
+
 
 class TestTask_five(unittest.TestCase):
     """ unit testing class Rectangle task 5. Display #0 """

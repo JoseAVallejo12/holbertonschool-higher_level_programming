@@ -3,7 +3,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.autoIndent": "full",
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.fontFamily": "consolas",
     "debug.console.fontFamily": "MesloLGS NF",
     "terminal.integrated.fontFamily": "MesloLGS NF",
