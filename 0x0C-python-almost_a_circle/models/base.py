@@ -75,3 +75,19 @@ class Base(object):
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create objeto dummi
+
+        Returns:
+            objet: object is intance of call funtion create
+        """
+
+        if dictionary and dictionary is not {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(2, 10)
+            else:
+                new = cls(80)
+            new.update(**dictionary)
+            return new
