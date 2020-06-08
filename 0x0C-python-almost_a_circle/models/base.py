@@ -91,3 +91,22 @@ class Base(object):
                 new = cls(80)
             new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        """load file json format
+
+        Returns:
+            list: list of object create
+        """
+
+        file = cls.__name__ + '.json'
+        with open(file, mode='r', encoding='utf-8') as myfile:
+            if myfile is None:
+                return("[]")
+            else:
+                new_list = cls.from_json_string(myfile.read())
+                new_obj = []
+                for obj in new_list:
+                    new_obj.append(cls.create(**obj))
+                return new_obj
