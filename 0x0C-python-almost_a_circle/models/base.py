@@ -44,14 +44,14 @@ class Base(object):
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """funtion for safe to json file
+        """funtion for safe to json file_name
 
         Args:
             list_objs (list): list of the object
         """
 
-        file = cls.__name__ + '.json'
-        with open(file, mode='w', encoding='utf-8') as myfile:
+        file_name = cls.__name__ + '.json'
+        with open(file_name, mode='w', encoding='utf-8') as myfile:
             if list_objs is None:
                 myfile.write(json.dumps("[]"))
             else:
@@ -59,3 +59,19 @@ class Base(object):
                 for i in range(len(list_objs)):
                     l_dict.append(list_objs[i].to_dictionary())
                 myfile.write(json.dumps(l_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """convert json to python object
+
+        Args:
+            json_string (str): string to convert
+
+        Returns:
+            list: ret
+        """
+
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
