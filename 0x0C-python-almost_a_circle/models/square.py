@@ -71,3 +71,18 @@ class Square(Rectangle):
                 self.x = args[2]
             if ln >= 4 and args[3] is not None:
                 self.y = args[3]
+
+    def to_dictionary(self):
+        """diccionari method
+
+        Returns:
+            dict: dictionari of values
+        """
+
+        new_dict = {
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y
+        }
+        return new_dict
