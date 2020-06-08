@@ -133,3 +133,19 @@ class Rectangle(Base):
             self.__y, self.__width,
             self.__height
         )
+
+    def to_dictionary(self):
+        """diccionari method
+
+        Returns:
+            dict: dictionari of values
+        """
+
+        new_dict = {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
+        return new_dict
