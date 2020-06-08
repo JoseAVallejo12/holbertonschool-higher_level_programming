@@ -49,3 +49,25 @@ class Square(Rectangle):
             self.y,
             self.size
         )
+
+    def update(self, *args, **kwargs):
+        """ Method for assig argv to var class """
+        ln = len(args)
+        if not args:
+            if kwargs.get('id') is not None:
+                self.id = kwargs.get('id')
+            if kwargs.get('size') is not None:
+                self.size = kwargs.get('size')
+            if kwargs.get('x') is not None:
+                self.x = kwargs.get('x')
+            if kwargs.get('y') is not None:
+                self.y = kwargs.get('y')
+        else:
+            if ln >= 1 and args[0] is not None:
+                self.id = args[0]
+            if ln >= 2 and args[1] is not None:
+                self.size = args[1]
+            if ln >= 3 and args[2] is not None:
+                self.x = args[2]
+            if ln >= 4 and args[3] is not None:
+                self.y = args[3]
