@@ -48,15 +48,11 @@ class Test_Format_and_style(unittest.TestCase):
         self.assertTrue(hasattr(Rectangle, "to_dictionary"))
         self.assertTrue(Rectangle.to_dictionary.__doc__)
 
-
-class TestTask_Two(unittest.TestCase):
-    """ unit testing class Rectangle task 2. First Rectangle """
-
     def test_aa1_id(self):
         """ check count and assignation of id in empty argvs """
         self.assertEqual(Rectangle(5, 5, 0, 0, 1).id, 1)
-        self.assertEqual(Rectangle(5, 5, 0, 0).id, 3)
-        self.assertEqual(Rectangle(5, 5, 0, 0).id, 4)
+        self.assertEqual(Rectangle(5, 5, 0, 0).id, 1)
+        self.assertEqual(Rectangle(5, 5, 0, 0).id, 2)
         self.assertEqual(Rectangle(5, 5, 0, 0, "holberton").id, "holberton")
 
     def test_aa2_instance(self):
@@ -104,10 +100,6 @@ class TestTask_Two(unittest.TestCase):
         self.assertEqual(gt.x, 56)
         gt.y = 14
         self.assertEqual(gt.y, 14)
-
-
-class TestTask_Three(unittest.TestCase):
-    """ unit testing class Rectangle task 3. Validate attributes """
 
     def test_ab1_TypeError_width(self):
         """ check TypeError for witdh """
@@ -215,10 +207,6 @@ class TestTask_Three(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(5, 5, 4, -2, 1)
 
-
-class TestTask_Four(unittest.TestCase):
-    """ unit testing class Rectangle task 4. Area first """
-
     def test_ac1_area1(self):
         """ check value resul 4x5 = 20 """
         c = Rectangle(4, 5)
@@ -228,10 +216,6 @@ class TestTask_Four(unittest.TestCase):
         """ check value resul 4x5 = 20 """
         c = Rectangle(8, 5)
         self.assertEqual(c.area(), 40)
-
-
-class TestTask_five_and_seven(unittest.TestCase):
-    """ unit testing class Rectangle task 5. Display #0 and 7. Display #1"""
 
     def test_ad0_display1(self):
         """This function tests the display function"""
@@ -257,10 +241,6 @@ class TestTask_five_and_seven(unittest.TestCase):
             r1.display()
         self.assertEqual(f.getvalue(), "#####\n#####\n#####\n")
 
-
-class TestTask_six(unittest.TestCase):
-    """ unit testing class Rectangle task 6. __str__  """
-
     def test_ae0_str(self):
         """ test 1 """
 
@@ -277,11 +257,7 @@ class TestTask_six(unittest.TestCase):
         f = io.StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
-        self.assertEqual(f.getvalue(), "[Rectangle] (9) 1/0 - 5/5\n")
-
-
-class TestTask_eight(unittest.TestCase):
-    """ unit testing class Rectangle task 8. Update #0 """
+        self.assertEqual(f.getvalue(), "[Rectangle] (12) 1/0 - 5/5\n")
 
     def test_af0_update(self):
         """ test stdout posicionated value (*args) """
@@ -334,9 +310,6 @@ class TestTask_eight(unittest.TestCase):
             print(r1)
             self.assertEqual(f.getvalue(), "[Rectangle] (8) 88/23 - 23/13\n")
 
-
-class TestTask_nine(unittest.TestCase):
-
     def test_ag0_update(self):
         """ test stdout """
 
@@ -387,10 +360,6 @@ class TestTask_nine(unittest.TestCase):
         with contextlib.redirect_stdout(f):
             print(r1)
             self.assertEqual(f.getvalue(), "[Rectangle] (8) 88/23 - 23/13\n")
-
-
-class TestTask_thirteen(unittest.TestCase):
-    """ unittesting class Rectangle task 10. And now, 12. Rectangle update """
 
     def test_ac1_load_dict(self):
         """ testing positional arguments """
