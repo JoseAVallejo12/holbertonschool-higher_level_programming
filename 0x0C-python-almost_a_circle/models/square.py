@@ -4,49 +4,42 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """new class
-
-    Args:
-        Rectangle (class): Inheritance: from Base Class
+    """ new class
+        Args:
+            Rectangle (class): Inheritance: from Base Class
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """constructor
-
-        Args:
-            size (int): side of square
-            x (int, optional): axis x. Defaults to 0.
-            y (int, optional): axis y. Defaults to 0.
-            id (int, optional): description. Defaults to None.
+        """ constructor
+            Args:
+                size (int): side of square
+                x (int, optional): axis x. Defaults to 0.
+                y (int, optional): axis y. Defaults to 0.
+                id (int, optional): description. Defaults to None.
         """
         self.size = size
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """getter method for size var
-
-        Returns:
-            int: value
         """
-        return self.__size
+        This function returns the size (width)
+        """
+        return self.width
 
     @size.setter
     def size(self, value):
-        """ setter method for size """
-
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        """
+            This function sets the size (width and height)
+        """
+        self.width = value
+        self.height = value
 
     def __str__(self):
-        """overloading
+        """ overloading
 
-        Returns:
-            str: string
+            Returns:
+                str: string
         """
         return "[Square] ({}) {}/{} - {}".format(
             self.id,
@@ -78,10 +71,10 @@ class Square(Rectangle):
                 self.y = args[3]
 
     def to_dictionary(self):
-        """diccionari method
+        """ diccionari method
 
-        Returns:
-            dict: dictionari of values
+            Returns:
+                dict: dictionari of values
         """
 
         new_dict = {
