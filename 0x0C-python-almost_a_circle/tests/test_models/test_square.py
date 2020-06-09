@@ -60,11 +60,11 @@ class TestTask_Ten_and_eleven(unittest.TestCase):
 
     def test_aa7_error(self):
         """ handle error """
-        with self.assertRaisesRegex(TypeError,
-                                    "takes from 2 to 5 positional arguments but 6 were"):
+        strs1 = "takes from 2 to 5 positional arguments but 6 were"
+        strs2 = "missing 1 required positional argument: 'size'"
+        with self.assertRaisesRegex(TypeError, strs1):
             Square(22, 3, 4, 3, 5)
-        with self.assertRaisesRegex(TypeError,
-                                    "missing 1 required positional argument: 'size'"):
+        with self.assertRaisesRegex(TypeError, strs2):
             Square()
 
 

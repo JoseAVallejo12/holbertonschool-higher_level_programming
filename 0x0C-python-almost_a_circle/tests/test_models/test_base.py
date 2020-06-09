@@ -54,7 +54,8 @@ class TestTask_fifteen(unittest.TestCase):
         with contextlib.redirect_stdout(f):
             print(dictionary)
         self.assertEqual(
-            f.getvalue(), '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]\n')
+            f.getvalue(),
+            '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]\n')
 
     def test_b02_dict_to_json(self):
         """ testing positional arguments """
@@ -67,7 +68,7 @@ class TestTask_fifteen(unittest.TestCase):
         self.assertEqual(
             f.getvalue(), "<class 'str'>\n")
 
-    #revisar
+    # revisar
     def test_b03_json_to_string(self):
         """This function tests the to_json_string func"""
         r1 = Rectangle(10, 7, 2, 8, 1)
@@ -77,7 +78,7 @@ class TestTask_fifteen(unittest.TestCase):
             len(json_dictionary),
             len('[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'))
 
-    #revisar
+    # revisar
     def test_b04_to_json_string_withNonearg(self):
         """This function tests to_json_string func with None argument"""
         json_dictionary = Base.to_json_string(None)
@@ -94,6 +95,7 @@ class TestTask_sixteen(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             str = file.read()
         self.assertEqual(len(str), len('[]'))
+
 
 class TestTask_seventeen(unittest.TestCase):
     """ unit testing class Base task 17 """
@@ -125,6 +127,7 @@ class TestTask_seventeen(unittest.TestCase):
         self.assertEqual(list_output, [])
         self.assertEqual(type(list_output), list)
 
+
 class TestTask_eighteen(unittest.TestCase):
     """ unit testing class Base task 18 """
 
@@ -137,6 +140,7 @@ class TestTask_eighteen(unittest.TestCase):
         self.assertEqual(str(r2), "[Rectangle] (7) 1/0 - 3/5")
         self.assertEqual(r1 is r2, False)
         self.assertEqual(r1 == r2, False)
+
 
 class TestTask_nineteen(unittest.TestCase):
     """ unit testing class Base task 19 """

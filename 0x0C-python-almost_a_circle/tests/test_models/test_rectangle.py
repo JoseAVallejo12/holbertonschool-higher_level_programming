@@ -379,7 +379,8 @@ class TestTask_thirteen(unittest.TestCase):
         with contextlib.redirect_stdout(f):
             print(r1.to_dictionary())
         self.assertEqual(
-            f.getvalue(), "{'x': 14, 'y': 5, 'id': 10, 'height': 25, 'width': 22}\n")
+            f.getvalue(),
+            "{'x': 14, 'y': 5, 'id': 10, 'height': 25, 'width': 22}\n")
 
     def test_ac3_type_dict(self):
         """ testing positional arguments """
