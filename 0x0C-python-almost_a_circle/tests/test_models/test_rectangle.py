@@ -9,7 +9,7 @@ from models.rectangle import Rectangle
 from models.base import Base
 
 
-class Test_Format_and_style(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     """ testing pep8 style and __document__ """
 
     def test_pep8_model(self):
@@ -51,9 +51,10 @@ class Test_Format_and_style(unittest.TestCase):
 
     def test_aa_id(self):
         """ check count and assignation of id in empty argvs """
+        Base._Base__nb_objects = 0
         self.assertEqual(Rectangle(5, 5, 0, 0, 1).id, 1)
-        self.assertEqual(Rectangle(5, 5, 0, 0).id, 27)
-        self.assertEqual(Rectangle(5, 5, 0, 0).id, 28)
+        self.assertEqual(Rectangle(5, 5, 0, 0).id, 1)
+        self.assertEqual(Rectangle(5, 5, 0, 0).id, 2)
         self.assertEqual(Rectangle(5, 5, 0, 0, "holberton").id, "holberton")
 
     def test_aa_instance(self):
@@ -104,6 +105,7 @@ class Test_Format_and_style(unittest.TestCase):
 
     def test_ab_TypeError_width(self):
         """ check TypeError for witdh """
+        Base._Base__nb_objects = 0
         with self.assertRaises(TypeError):
             Rectangle('q', 6, 0, 0, 0)
 
@@ -253,12 +255,12 @@ class Test_Format_and_style(unittest.TestCase):
 
     def test_ae_strs(self):
         """ test 2 """
-
+        Base._Base__nb_objects = 0
         r1 = Rectangle(5, 5, 1)
         f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
-        self.assertEqual(f.getvalue(), "[Rectangle] (38) 1/0 - 5/5\n")
+        self.assertEqual(f.getvalue(), "[Rectangle] (1) 1/0 - 5/5\n")
 
     def test_af_update(self):
         """ test stdout posicionated value (*args) """
@@ -311,7 +313,7 @@ class Test_Format_and_style(unittest.TestCase):
             print(r1)
             self.assertEqual(f.getvalue(), "[Rectangle] (8) 88/23 - 23/13\n")
 
-    def test_agg_update(self):
+    def test_ag_update_a(self):
         """ test stdout """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
@@ -321,7 +323,7 @@ class Test_Format_and_style(unittest.TestCase):
             print(r1)
             self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 10/10\n")
 
-    def test_agg_updat(self):
+    def test_ag_updat_b(self):
         """ test std out and set nemed value (**kwargs) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
@@ -333,7 +335,7 @@ class Test_Format_and_style(unittest.TestCase):
             print(r1)
             self.assertEqual(f.getvalue(), "[Rectangle] (89) 10/10 - 2/10\n")
 
-    def test_ag_update_a(self):
+    def test_ag_update_c(self):
         """ test std out and set named value (**kwargs)"""
 
         r1 = Rectangle(10, 10, 10, 10, 2)
@@ -347,7 +349,7 @@ class Test_Format_and_style(unittest.TestCase):
             self.assertEqual(
                 f.getvalue(), "[Rectangle] (56) 10/10 - 22/33\n")
 
-    def test_ag_update_b(self):
+    def test_ag_update_d(self):
         """ test std out and set named value (**kwargs)"""
 
         r1 = Rectangle(10, 10, 10, 10, 2)
