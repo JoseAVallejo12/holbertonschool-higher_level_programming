@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# jose vallejo contreras
+""" create a new class Scuare """
 from models.rectangle import Rectangle
 
 
