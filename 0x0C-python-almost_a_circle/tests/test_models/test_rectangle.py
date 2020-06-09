@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ unit test for Rectangle.py file """
 import unittest
-import io
+from io import StringIO
+import sys
 import contextlib
 import pep8
 from models.rectangle import Rectangle
@@ -220,7 +221,7 @@ class Test_Format_and_style(unittest.TestCase):
     def test_ad0_display1(self):
         """This function tests the display function"""
         r1 = Rectangle(2, 3, 2, 1)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "\n  ##\n  ##\n  ##\n")
@@ -228,7 +229,7 @@ class Test_Format_and_style(unittest.TestCase):
     def test_ad1_display2(self):
         """This function tests the display function"""
         r1 = Rectangle(5, 3, 2, 2)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "\n\n  #####\n  #####\n  #####\n")
@@ -236,7 +237,7 @@ class Test_Format_and_style(unittest.TestCase):
     def test_ad2_display3(self):
         """This function tests the display function"""
         r1 = Rectangle(5, 3)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "#####\n#####\n#####\n")
@@ -245,7 +246,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test 1 """
 
         r1 = Rectangle(4, 6, 2, 1, 12)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Rectangle] (12) 2/1 - 4/6\n")
@@ -254,7 +255,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test 2 """
 
         r1 = Rectangle(5, 5, 1)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Rectangle] (12) 1/0 - 5/5\n")
@@ -263,7 +264,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test stdout posicionated value (*args) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.update(89)
             print(r1)
@@ -273,7 +274,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set posicionated value (*args) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(89, 2)
         self.assertEqual(r1.id, 89)
         self.assertEqual(r1.width, 2)
@@ -285,7 +286,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set posicionated value (*args) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(56, 22, 33)
         self.assertEqual(r1.id, 56)
         self.assertEqual(r1.width, 22)
@@ -299,7 +300,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set posicionated value (*args) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(8, 23, 13, 88, 23)
         self.assertEqual(r1.id, 8)
         self.assertEqual(r1.width, 23)
@@ -314,7 +315,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test stdout """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.update(id=89)
             print(r1)
@@ -324,7 +325,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set nemed value (**kwargs) """
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(width=2, id=89)
         self.assertEqual(r1.id, 89)
         self.assertEqual(r1.width, 2)
@@ -336,7 +337,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set named value (**kwargs)"""
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(id=56, height=33, width=22)
         self.assertEqual(r1.id, 56)
         self.assertEqual(r1.width, 22)
@@ -350,7 +351,7 @@ class Test_Format_and_style(unittest.TestCase):
         """ test std out and set named value (**kwargs)"""
 
         r1 = Rectangle(10, 10, 10, 10, 2)
-        f = io.StringIO()
+        f = StringIO()
         r1.update(id=8, x=88, width=23, y=23, height=13)
         self.assertEqual(r1.id, 8)
         self.assertEqual(r1.width, 23)
@@ -374,7 +375,7 @@ class Test_Format_and_style(unittest.TestCase):
         self.assertEqual(r1.height, 25)
         self.assertEqual(r1.x, 14)
         self.assertEqual(r1.y, 5)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Rectangle] (10) 14/5 - 22/25\n")
@@ -385,7 +386,7 @@ class Test_Format_and_style(unittest.TestCase):
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'width': 22, 'height': 25}
         r1 = Rectangle(10, 2, 1, 9)
         r1.update(**new_dict)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1.to_dictionary())
         self.assertEqual(
@@ -397,7 +398,7 @@ class Test_Format_and_style(unittest.TestCase):
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'width': 22, 'height': 25}
         r1 = Rectangle(10, 2, 1, 9)
         r1.update(**new_dict)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(type(r1.to_dictionary()))
         self.assertEqual(f.getvalue(), "<class 'dict'>\n")

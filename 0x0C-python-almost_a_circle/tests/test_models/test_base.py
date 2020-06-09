@@ -2,7 +2,8 @@
 """ unit test for file base.py """
 import unittest
 import json
-import io
+from io import StringIO
+import sys
 import contextlib
 from models.base import Base
 from models.rectangle import Rectangle
@@ -41,16 +42,12 @@ class TestTask_One(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Base().__nb_objects)
 
-
-class TestTask_fifteen(unittest.TestCase):
-    """ unit testing class Base task 15 """
-
     def test_b01_dict_to_json(self):
         """ testing positional arguments """
         new_dict = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_json_string([new_dict])
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(dictionary)
         self.assertEqual(
@@ -62,7 +59,7 @@ class TestTask_fifteen(unittest.TestCase):
         new_dict = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_json_string([new_dict])
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(type(dictionary))
         self.assertEqual(
@@ -85,20 +82,12 @@ class TestTask_fifteen(unittest.TestCase):
         self.assertEqual(json_dictionary, "[]")
         self.assertEqual(type(json_dictionary), str)
 
-
-class TestTask_sixteen(unittest.TestCase):
-    """ unit testing class Base task 16 """
-
     def test_c01_save_to_filewithNonearg(self):
         """This function tests the save_to_file func with None argument"""
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             str = file.read()
         self.assertEqual(len(str), len('[]'))
-
-
-class TestTask_seventeen(unittest.TestCase):
-    """ unit testing class Base task 17 """
 
     def test_d01_from_json_string(self):
         """This function tests the from_json_string func"""
@@ -127,23 +116,15 @@ class TestTask_seventeen(unittest.TestCase):
         self.assertEqual(list_output, [])
         self.assertEqual(type(list_output), list)
 
-
-class TestTask_eighteen(unittest.TestCase):
-    """ unit testing class Base task 18 """
-
     def test_e01_create_zzz(self):
         """This function tests the create func"""
         r1 = Rectangle(3, 5, 1)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
-        self.assertEqual(str(r1), "[Rectangle] (7) 1/0 - 3/5")
-        self.assertEqual(str(r2), "[Rectangle] (7) 1/0 - 3/5")
+        self.assertEqual(str(r1), "[Rectangle] (9) 1/0 - 3/5")
+        self.assertEqual(str(r2), "[Rectangle] (9) 1/0 - 3/5")
         self.assertEqual(r1 is r2, False)
         self.assertEqual(r1 == r2, False)
-
-
-class TestTask_nineteen(unittest.TestCase):
-    """ unit testing class Base task 19 """
 
     def test_f01_loadfromfile(self):
         """This function tests the create func"""

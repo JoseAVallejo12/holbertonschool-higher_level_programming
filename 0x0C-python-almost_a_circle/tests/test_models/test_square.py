@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ unit test for Rectangle.py file """
 import unittest
-import io
+from io import StringIO
+import sys
 import contextlib
 from models.rectangle import Rectangle
 from models.square import Square
@@ -37,7 +38,7 @@ class TestTask_Ten_and_eleven(unittest.TestCase):
     def test_aa5_str(self):
         """ test 1 """
         r1 = Square(2, 2, 2, 2)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Square] (2) 2/2 - 2\n")
@@ -45,7 +46,7 @@ class TestTask_Ten_and_eleven(unittest.TestCase):
     def test_aa6_display1(self):
         """This function tests the display function"""
         r1 = Square(3)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "###\n###\n###\n")
@@ -53,7 +54,7 @@ class TestTask_Ten_and_eleven(unittest.TestCase):
     def test_aa7_display2(self):
         """This function tests the display function"""
         r1 = Square(3, 1, 3)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             r1.display()
         self.assertEqual(f.getvalue(), "\n\n\n ###\n ###\n ###\n")
@@ -67,10 +68,6 @@ class TestTask_Ten_and_eleven(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, strs2):
             Square()
 
-
-class TestTask_twelve(unittest.TestCase):
-    """ unittesting class Rectangle task 10. And now, 12. Square update """
-
     def test_ab1_args(self):
         """ testing positional arguments """
         r1 = Square(50)
@@ -80,7 +77,7 @@ class TestTask_twelve(unittest.TestCase):
         self.assertEqual(r1.id, 10)
         self.assertEqual(r1.x, 14)
         self.assertEqual(r1.y, 5)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Square] (10) 14/5 - 22\n")
@@ -94,14 +91,10 @@ class TestTask_twelve(unittest.TestCase):
         self.assertEqual(r1.id, 10)
         self.assertEqual(r1.x, 14)
         self.assertEqual(r1.y, 5)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Square] (10) 14/5 - 22\n")
-
-
-class TestTask_fourteen(unittest.TestCase):
-    """ unittesting class Rectangle task 10. And now, 12. Square update """
 
     def test_ac1_load_dict(self):
         """ testing positional arguments """
@@ -113,7 +106,7 @@ class TestTask_fourteen(unittest.TestCase):
         self.assertEqual(r1.id, 10)
         self.assertEqual(r1.x, 14)
         self.assertEqual(r1.y, 5)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1)
         self.assertEqual(f.getvalue(), "[Square] (10) 14/5 - 22\n")
@@ -123,7 +116,7 @@ class TestTask_fourteen(unittest.TestCase):
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'size': 22}
         r1 = Square(50)
         r1.update(**new_dict)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(r1.to_dictionary())
         self.assertEqual(
@@ -134,7 +127,7 @@ class TestTask_fourteen(unittest.TestCase):
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'size': 22}
         r1 = Square(50)
         r1.update(**new_dict)
-        f = io.StringIO()
+        f = StringIO()
         with contextlib.redirect_stdout(f):
             print(type(r1.to_dictionary()))
         self.assertEqual(f.getvalue(), "<class 'dict'>\n")
