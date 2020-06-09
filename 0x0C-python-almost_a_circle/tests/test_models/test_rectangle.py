@@ -382,19 +382,6 @@ class TestRectangle(unittest.TestCase):
             print(r1)
         self.assertEqual(f.getvalue(), "[Rectangle] (10) 14/5 - 22/25\n")
 
-    def test_ac_print_dict(self):
-        """ testing ps """
-
-        new_dict = {'x': 14, 'y': 5, 'id': 10, 'width': 22, 'height': 25}
-        r1 = Rectangle(10, 2, 1, 9)
-        r1.update(**new_dict)
-        f = StringIO()
-        with contextlib.redirect_stdout(f):
-            print(r1.to_dictionary())
-        self.assertEqual(
-            f.getvalue(),
-            "{'x': 14, 'y': 5, 'id': 10, 'height': 25, 'width': 22}\n")
-
     def test_ac_type_dict(self):
         """ testing positional arguments """
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'width': 22, 'height': 25}

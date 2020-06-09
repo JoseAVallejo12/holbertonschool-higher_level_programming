@@ -43,19 +43,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Base().__nb_objects)
 
-    def test_ab_dict_to_json_a(self):
-        """ testing positional arguments """
-        Base._Base__nb_objects = 0
-        new_dict = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
-        r1 = Rectangle(10, 7, 2, 8)
-        dictionary = r1.to_json_string([new_dict])
-        f = StringIO()
-        with contextlib.redirect_stdout(f):
-            print(dictionary)
-        self.assertEqual(
-            f.getvalue(),
-            '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]\n')
-
     def test_ab_dict_to_json_b(self):
         """ testing positional arguments """
         new_dict = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
