@@ -143,17 +143,6 @@ class TestSquare(unittest.TestCase):
             print(r1)
         self.assertEqual(f.getvalue(), "[Square] (10) 14/5 - 22\n")
 
-    def test_ac_print_dict(self):
-        """ testing ps """
-        new_dict = {'x': 14, 'y': 5, 'id': 10, 'size': 22}
-        r1 = Square(50)
-        r1.update(**new_dict)
-        f = StringIO()
-        with contextlib.redirect_stdout(f):
-            print(r1.to_dictionary())
-        self.assertEqual(
-            f.getvalue(), "{'id': 10, 'x': 14, 'size': 22, 'y': 5}\n")
-
     def test_ac_type_dict(self):
         """ testing positional arguments """
         new_dict = {'x': 14, 'y': 5, 'id': 10, 'size': 22}
