@@ -4,6 +4,11 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """new classs rectangle
+
+        Args:
+            Base (class): Inheritance: from Base Class
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Contructor
