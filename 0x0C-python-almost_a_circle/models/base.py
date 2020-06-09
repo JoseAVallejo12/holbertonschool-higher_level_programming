@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ class base for start unit test """
 import json
+import csv
 
 
 class Base(object):
