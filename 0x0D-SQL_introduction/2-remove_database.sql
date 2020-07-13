@@ -1,0 +1,2 @@
+-- Delete one BD
+DROP DATABASE hbtn_0c_0;
