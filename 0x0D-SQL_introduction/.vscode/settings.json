@@ -1,0 +1,17 @@
+{
+	"sqltools.connections": [
+		{
+			"database": "hbtn_0c_0",
+			"driver": "MySQL",
+			"mysqlOptions": {
+				"authProtocol": "default"
+			},
+			"name": "jvc",
+			"port": 3306,
+			"previewLimit": 50,
+			"server": "localhost",
+			"username": "root",
+			"password": ""
+		}
+	]
+}
