@@ -1,7 +1,10 @@
--- Creates the table unique_id on your MySQL server.
+-- Creates the database hbtn_0d_usa and the table states on your MySQL server.
+CREATE DATABASE
+IF NOT EXISTS hbtn_0d_usa;
 CREATE TABLE
-IF NOT EXISTS unique_id
+IF NOT EXISTS states
 (
-	id INT DEFAULT 1 UNIQUE,
-	name VARCHAR(256) NOT NULL
+	id INT DEFAULT 1 UNIQUE AUTO_INCREMENT,
+	name VARCHAR(256) NOT NULL,
+	PRIMARY KEY(id)
 );
