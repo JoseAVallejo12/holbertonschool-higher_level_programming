@@ -17,13 +17,14 @@ if __name__ == "__main__":
     # Getting a cursor in MySQLdb python
     cur = conn.cursor()
 
-    # Executing db queries
+    # Executing db queries where nama starting in N or n
     cur.execute("SELECT * FROM states WHERE name like 'N%' ORDER by id ASC")
     # Obtaining all result of queries
     query_table = cur.fetchall()
-    # Printing the result one to one
+    # Printing the result one to one only if starting N
     for row in query_table:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     # Close conection to cursor and db
     cur.close()
