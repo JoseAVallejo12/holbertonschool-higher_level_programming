@@ -24,7 +24,8 @@ if __name__ == "__main__":
     query_table = cur.fetchall()
     # Printing the result one to one only if starting arg[4]
     for row in query_table:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     # Close conection to cursor and db
     cur.close()
