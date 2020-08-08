@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Show all row in table states that macht with argv[4]."""
+"""Show all row in table states that macht with argv[4] in safe mode."""
 import MySQLdb
 from sys import argv
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         db=argv[3],
         charset="utf8"
     )
-    # Build string for make query
+    # Build safety string for make query and avoid sql injection
     if ";" in argv[4]:
         query = " "
     else:
