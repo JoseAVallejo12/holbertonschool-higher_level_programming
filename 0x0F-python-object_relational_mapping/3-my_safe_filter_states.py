@@ -13,9 +13,8 @@ if __name__ == "__main__":
         db=argv[3],
         charset="utf8"
     )
-    print(argv[4])
     # Build string for make query
-    if ";" in argv[4]:
+    if ";" or '"' or "|" or "'" in argv[4]:
         query = " "
     else:
         query = "SELECT * FROM states WHERE name='{}' ORDER by id ASC".format(
