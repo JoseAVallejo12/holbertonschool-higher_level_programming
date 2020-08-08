@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # Executing db queries
-    cur.execute("SELECT * FROM states WHERE name like 'N%'")
+    cur.execute("SELECT * FROM states WHERE name like 'N%' ORDER by id ASC")
     # Obtaining all result of queries
     query_table = cur.fetchall()
     # Printing the result one to one
