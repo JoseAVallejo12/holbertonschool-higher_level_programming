@@ -13,18 +13,18 @@ if __name__ == "__main__":
         db=argv[3],
         charset="utf8"
     )
-
+    # Build string for make query
+    query = "SELECT * FROM states WHERE name='{}' ORDER by id ASC".format(
+        argv[4])
     # Getting a cursor in MySQLdb python
     cur = conn.cursor()
-
     # Executing db queries where nama starting in N or n
-    cur.execute("SELECT * FROM states ORDER by id ASC")
+    cur.execute(query)
     # Obtaining all result of queries
     query_table = cur.fetchall()
     # Printing the result one to one only if starting arg[4]
     for row in query_table:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     # Close conection to cursor and db
     cur.close()
