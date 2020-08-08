@@ -22,6 +22,7 @@ if __name__ == "__main__":
     # Obtaining all result of queries
     query_table = cur.fetchall()
     # Printing the result one to one only if starting arg[4]
+    print(query_table)
     for row in query_table:
         if argv[4] in row:
             print(row)
