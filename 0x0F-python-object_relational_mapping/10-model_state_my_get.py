@@ -17,7 +17,9 @@ if __name__ == "__main__":
     if ";" not in sys.argv[4]:
         state = session.query(State).filter(
             State.name.like(sys.argv[4])).order_by(State.id)
-        for i in state.all():
-            print(i.id)
-
+        if (state.all()):
+            for i in state.all():
+                print(i.id)
+        else:
+            print("Not found")
     session.close()
