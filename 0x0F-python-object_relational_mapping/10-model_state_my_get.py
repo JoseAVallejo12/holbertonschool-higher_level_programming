@@ -13,10 +13,11 @@ if __name__ == "__main__":
     # Session for make a queries to db
     Session = sessionmaker(bind=engine)
     session = Session()
-    # Query to bd(argv[3]) for table State
-    state = session.query(State).filter(
-        State.name.like(sys.argv[4])).order_by(State.id)
-    for i in state.all():
-        print(i.id)
+    # Query to bd(argv[3]) for table State avoid SQL inyection
+    if ";" not in sys.argv[4]:
+        state = session.query(State).filter(
+            State.name.like(sys.argv[4])).order_by(State.id)
+        for i in state.all():
+            print(i.id)
 
     session.close()
