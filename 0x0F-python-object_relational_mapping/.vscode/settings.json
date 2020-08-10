@@ -1,0 +1,7 @@
+{
+	"python.pythonPath": "/usr/bin/python3",
+	"editor.fontFamily": "MesloLGS NF",
+	"editor.fontSize": 16,
+	"terminal.integrated.fontWeight": "100",
+
+}
