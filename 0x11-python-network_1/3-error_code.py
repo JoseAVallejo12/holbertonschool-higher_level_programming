@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Script that fetches https://intranet.hbtn.io/status."""
-from urllib import request, parse
+from urllib import request
 import sys
 if __name__ == '__main__':
     url = sys.argv[1]
