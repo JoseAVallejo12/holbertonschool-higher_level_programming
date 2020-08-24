@@ -6,8 +6,9 @@ import sys
 if __name__ == '__main__':
     dato = sys.argv[1] if len(sys.argv) == 2 else ""
     params = {'q': dato}
-    response = requests.post('http://0.0.0.0:80/search_user', data=params)
     try:
+        response = requests.post(
+            'http://0.0.0.0:5000/search_user', data=params)
         data = response.json()
         if len(data) == 0:
             print("No result")
