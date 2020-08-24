@@ -4,6 +4,6 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    response = requests.get(sys.argv[1])
-    value = response.headers.get('X-Request-Id')
-    print(type(value)
+    params = {'email': sys.argv[2]}
+    response = requests.post(sys.argv[1], data=params)
+    print(response.text)
