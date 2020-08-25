@@ -4,11 +4,9 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    user = sys.argv[1]
-    repo = sys.argv[2]
-    response = requests.get(
-        'https://api.github.com/repos/{}/{}/commits'.format(
-            user, repo))
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[1], sys.argv[2])
+    response = requests.get(url)
     data = response.json()
     try:
         for idx in range(10):
