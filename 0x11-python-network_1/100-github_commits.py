@@ -3,15 +3,14 @@
 import requests
 import sys
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     url = "https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[1], sys.argv[2])
-    response = requests.get(url)
-    data = response.json()
+        sys.argv[2], sys.argv[1])
+    req = requests.get(url)
     try:
-        for idx in range(10):
-            print("{}: {}".format(
-                data[idx].get('sha'),
-                data[idx].get('commit').get('author').get('name')))
+        for i in range(10):
+            print("{}: {}".format(req.json()[i].get("sha"),
+                                  req.json()[i].get("commit").
+                                  get("author").get("name")))
     except IndexError:
         pass
