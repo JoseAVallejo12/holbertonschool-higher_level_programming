@@ -11,6 +11,6 @@ if __name__ == '__main__':
             user, repo))
     data = response.json()
     for idx in range(10):
-        print("{}\t{}".format(
+        print("{}: {}".format(
             data[idx].get('sha'),
             data[idx].get('commit').get('author').get('name')))
