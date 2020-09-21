@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* script that imports an array and computes a new array. */
+/*Script that imports an array and computes a new array. */
 const list = require('./100-data').list;
 const newList = list.map((index, value) => index * value);
 console.log(list);
