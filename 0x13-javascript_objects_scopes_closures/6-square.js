@@ -2,17 +2,17 @@
 /* that defines a square and inherits from Rectangle
 constructor must take 1 argument: size
 constructor of Rectangle must be called (by using super()) */
-const Rectangle = require('./4-rectangle');
+const square = require("./5-square");
 
-class Square extends Rectangle {
-  constructor (size) {
+class Square extends square {
+  constructor(size) {
     super(size, size);
   }
 
-  charPrint (c) {
+  charPrint(c) {
     let chr = c;
-    if (!c) {
-      chr = 'X';
+    if (c === undefined) {
+      chr = "X";
     }
     for (let i = 0; i < this.width; i++) {
       console.log(chr.repeat(this.width));
