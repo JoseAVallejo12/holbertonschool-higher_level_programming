@@ -10,7 +10,7 @@ request.get({ url: process.argv[2], json: true },
     for (const index in resultsList) {
       const peoplesApiList = resultsList[index].characters;
       for (const idx in peoplesApiList) {
-        if (peoplesApiList[idx].match('18')) {
+        if (peoplesApiList[idx].match('/18/')) {
           characterCount += 1;
         }
       }
