@@ -4,7 +4,14 @@ const fs = require('fs');
 
 fs.readFile('./' + process.argv[2], 'utf8', function (err, data) {
   if (err) {
-    return console.log(err);
+    error = {
+        'Error': err.message + ' at Error (native)',
+        'errno': err.errno,
+        'code': err.code,
+        'syscall': err.syscall,
+        'path': err.path
+    }
+    return console.log(error);
   }
   console.log(data);
 });
