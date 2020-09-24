@@ -1,3 +1,3 @@
 $('#red_header').click((evenClick) => {
-  evenClick.target.className = 'red';
+  $(evenClick.target).addClass('red');
 });
